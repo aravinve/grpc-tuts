@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace = "grpc_tuts";
+
+package todo;
+
+service Todo {
+    rpc CreateTodo(CreateTodoRequest) returns (CreateTodoResponse);
+    // rpc UpdateTodo(UpdateTodoRequest) returns (UpdateTodoResponse);
+    // rpc DeleteTodo(DeleteTodoRequest) returns (DeleteTodoResponse);
+    // rpc GetTodo(GetTodoRequest) returns (GetTodoResponse);
+    // rpc ListTodo(ListTodoRequest) returns (ListTodoResponse);
+}
+
+message CreateTodoRequest {
+    string title = 1;
+    bool is_completed = 2;
+}
+
+message CreateTodoResponse {
+    string id = 1;
+    string title = 2;
+    bool is_completed = 3;
+}
