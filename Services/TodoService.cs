@@ -56,6 +56,21 @@ public class TodoService : Todo.TodoBase
         }
     }
 
+    public override Task<DeleteTodoResponse> DeleteTodo(DeleteTodoRequest request, ServerCallContext context)
+    {
+        if (_dictionary.ContainsKey(request.Id))
+        {
+            _dictionary.Remove(request.Id);
+            PrintTodoDict("Deleted TODO");
+            return Task.FromResult(new DeleteTodoResponse());
+
+        }
+        else
+        {
+            throw new RpcException(new Status(StatusCode.InvalidArgument, "TodoId not found in the list."));
+        }
+    }
+
 
     #region Helper Methods
 
@@ -65,6 +80,10 @@ public class TodoService : Todo.TodoBase
         if (_dictionary.Count <= 0)
         {
             _logger.LogInformation("Your Dict is Empty!!");
+        }
+        else
+        {
+            _logger.LogInformation($"Your Dict Count = {_dictionary.Count}");
         }
         foreach (var kvp in _dictionary)
         {
