@@ -90,6 +90,20 @@ public class TodoService : Todo.TodoBase
         }
     }
 
+    public override Task<ListTodoResponse> ListTodo(ListTodoRequest request, ServerCallContext context)
+    {
+        PrintTodoDict("List TODO");
+        List<TodoDto> todos;
+        lock (_dictionary)
+        {
+            todos = new List<TodoDto>(_dictionary.Values);
+        }
+        return Task.FromResult(new ListTodoResponse
+        {
+            Todos = { todos }
+        });
+    }
+
 
     #region Helper Methods
 
