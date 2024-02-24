@@ -1,15 +1,20 @@
 syntax = "proto3";
+package todo;
 
 option csharp_namespace = "grpc_tuts";
 
-package todo;
+message TodoDto {
+    string id = 1;
+    string title = 2;
+    bool is_completed = 3;
+}
 
 service Todo {
-    rpc CreateTodo(CreateTodoRequest) returns (CreateTodoResponse);
-    rpc UpdateTodo(UpdateTodoRequest) returns (UpdateTodoResponse);
-    rpc DeleteTodo(DeleteTodoRequest) returns (DeleteTodoResponse);
-    rpc GetTodo(GetTodoRequest) returns (GetTodoResponse);
-    rpc ListTodo(ListTodoRequest) returns (ListTodoResponse);
+    rpc CreateTodo (CreateTodoRequest) returns (CreateTodoResponse);
+    rpc UpdateTodo (UpdateTodoRequest) returns (UpdateTodoResponse);
+    rpc DeleteTodo (DeleteTodoRequest) returns (DeleteTodoResponse);
+    rpc GetTodo (GetTodoRequest) returns (GetTodoResponse);
+    rpc ListTodo (ListTodoRequest) returns (ListTodoResponse);
 }
 
 message CreateTodoRequest {
@@ -39,8 +44,7 @@ message DeleteTodoRequest {
     string id = 1;
 }
 
-message DeleteTodoResponse {
-}
+message DeleteTodoResponse {}
 
 message GetTodoRequest {
     string id = 1;
@@ -52,15 +56,7 @@ message GetTodoResponse {
     bool is_completed = 3;
 }
 
-message TodoDto {
-    string id = 1;
-    string title = 2;
-    bool is_completed = 3;
-}
-
-message ListTodoRequest {
-    string id = 1;
-}
+message ListTodoRequest {}
 
 message ListTodoResponse {
     repeated TodoDto todos = 1;
