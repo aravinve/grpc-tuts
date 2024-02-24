@@ -1,7 +1,7 @@
 syntax = "proto3";
 package todo;
 
-option csharp_namespace = "grpc_tuts";
+option csharp_namespace = "TodoApp";
 
 message TodoDto {
     string id = 1;

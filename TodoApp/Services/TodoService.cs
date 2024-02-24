@@ -1,9 +1,9 @@
 using Grpc.Core;
 using System;
 
-using grpc_tuts.Models;
+using TodoApp.Models;
 
-namespace grpc_tuts.Services;
+namespace TodoApp.Services;
 
 public class TodoService : Todo.TodoBase
 {

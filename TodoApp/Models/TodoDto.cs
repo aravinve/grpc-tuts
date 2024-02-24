@@ -1,6 +1,6 @@
 using System;
 
-namespace grpc_tuts.Models;
+namespace TodoApp.Models;
 
 public class TodoDto
 {

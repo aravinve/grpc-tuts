@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "grpc-tuts", "grpc-tuts.csproj", "{7E396E57-63B6-4A7F-AB33-2C63799212CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreeterApp", "GreeterApp\GreeterApp.csproj", "{6856566D-6F79-462F-9204-42FE43C6CD4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApp", "TodoApp\TodoApp.csproj", "{BDA04FFE-B8CE-46CD-97AA-08F7D71BC9A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7E396E57-63B6-4A7F-AB33-2C63799212CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7E396E57-63B6-4A7F-AB33-2C63799212CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7E396E57-63B6-4A7F-AB33-2C63799212CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7E396E57-63B6-4A7F-AB33-2C63799212CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6856566D-6F79-462F-9204-42FE43C6CD4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6856566D-6F79-462F-9204-42FE43C6CD4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6856566D-6F79-462F-9204-42FE43C6CD4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6856566D-6F79-462F-9204-42FE43C6CD4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDA04FFE-B8CE-46CD-97AA-08F7D71BC9A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDA04FFE-B8CE-46CD-97AA-08F7D71BC9A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDA04FFE-B8CE-46CD-97AA-08F7D71BC9A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDA04FFE-B8CE-46CD-97AA-08F7D71BC9A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
