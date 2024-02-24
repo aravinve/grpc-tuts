@@ -8,7 +8,7 @@ service Todo {
     rpc CreateTodo(CreateTodoRequest) returns (CreateTodoResponse);
     rpc UpdateTodo(UpdateTodoRequest) returns (UpdateTodoResponse);
     rpc DeleteTodo(DeleteTodoRequest) returns (DeleteTodoResponse);
-    // rpc GetTodo(GetTodoRequest) returns (GetTodoResponse);
+    rpc GetTodo(GetTodoRequest) returns (GetTodoResponse);
     // rpc ListTodo(ListTodoRequest) returns (ListTodoResponse);
 }
 
@@ -40,4 +40,14 @@ message DeleteTodoRequest {
 }
 
 message DeleteTodoResponse {
+}
+
+message GetTodoRequest {
+    string id = 1;
+}
+
+message GetTodoResponse {
+    string id = 1;
+    string title = 2;
+    bool is_completed = 3;
 }

@@ -71,6 +71,25 @@ public class TodoService : Todo.TodoBase
         }
     }
 
+    public override Task<GetTodoResponse> GetTodo(GetTodoRequest request, ServerCallContext context)
+    {
+        if (_dictionary.TryGetValue(request.Id, out var todoItem))
+        {
+            PrintTodoDict("Get TODO");
+            return Task.FromResult(new GetTodoResponse
+            {
+                Id = todoItem.Id,
+                Title = todoItem.Title,
+                IsCompleted = todoItem.IsCompleted
+            });
+
+        }
+        else
+        {
+            throw new RpcException(new Status(StatusCode.InvalidArgument, "TodoId not found in the list."));
+        }
+    }
+
 
     #region Helper Methods
 
