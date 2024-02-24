@@ -6,7 +6,7 @@ package todo;
 
 service Todo {
     rpc CreateTodo(CreateTodoRequest) returns (CreateTodoResponse);
-    // rpc UpdateTodo(UpdateTodoRequest) returns (UpdateTodoResponse);
+    rpc UpdateTodo(UpdateTodoRequest) returns (UpdateTodoResponse);
     // rpc DeleteTodo(DeleteTodoRequest) returns (DeleteTodoResponse);
     // rpc GetTodo(GetTodoRequest) returns (GetTodoResponse);
     // rpc ListTodo(ListTodoRequest) returns (ListTodoResponse);
@@ -18,6 +18,18 @@ message CreateTodoRequest {
 }
 
 message CreateTodoResponse {
+    string id = 1;
+    string title = 2;
+    bool is_completed = 3;
+}
+
+message UpdateTodoRequest {
+    string id = 1;
+    string title = 2;
+    bool is_completed = 3;
+}
+
+message UpdateTodoResponse {
     string id = 1;
     string title = 2;
     bool is_completed = 3;
